@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Run Docker container') {
             steps {
-                sh 'docker run -d -p 3000:3000 --name sweet-app-container sweet-app'
+                sh 'docker run -d -p 4000:4000 --name sweet-app-container sweet-app'
             }
         }
         stage('Test /sweet endpoint') {
             steps {
-                sh 'sleep 5 && curl http://localhost:3000/sweet'
+                sh 'sleep 5 && curl http://localhost:4000/sweet'
             }
         }
     }
